@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect
-from app import db, User, app
+from app import db, Post, app
 from datetime import datetime
 import sqlite3 
 
@@ -27,7 +27,6 @@ def main():
     conn = create_connection(database)
 
     if conn is not None:
-        # maak gast table
         create_table(conn, sql_create_guest_table)
 
 
@@ -36,9 +35,8 @@ def main():
 def index():
     return render_template("Appointment.html")    
 
-@app.route('/post',method=['GET','POST'])    
+@app.route('/post',method=['POST'])    
 def post():
-
         if request.method == 'POST':
             c = conn.cursor()
             firsName=request.form.get('firsName')
