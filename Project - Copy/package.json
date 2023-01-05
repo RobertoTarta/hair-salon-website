@@ -1,0 +1,7 @@
+{
+  "proxy": "http://45.456.200.5:7000/",
+  "type":"module",
+  "dependencies": {
+    "react-calendar": "^4.0.0"
+  }
+}
