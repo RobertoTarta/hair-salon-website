@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>NN Hair Salon</title>
+<link rel="stylesheet" href="/static/style.css">
+    </head>
+
+    <body>
+        <header>
+            <a   class="middle" href="/"><img src="/static/images/logo.png" alt="logo"></a>
+        </header>
+
+        <nav>
+            <ul > 
+                <li>
+                    <a  href="{{url_for('index')}}"> Home</a></li>
+                </li>
+
+                <li class="class1"><a> Services</a>
+                    <ul class="submenu1">
+                        <li><a href="{{url_for('HairCutting')}}"> Hair cutting</a></li>
+                        <li><a href="{{url_for('BeardShaving')}}"> Beard shaving</a></li>
+                        <li><a href="{{url_for('HairColoring')}}"> Hair coloring</a></li>
+                        <li><a href="{{url_for('Manicure')}}"> Manicure</a></li>
+                        <li><a href="{{url_for('Pedicure')}}"> Pedicure</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="{{url_for('AboutUs')}}"> About us</a>
+                    <ul class="submenu2">
+                        <li><a href="{{url_for('WhereToFindUs')}}">Where to find us</a></li>
+                        <li><a href="{{url_for('OurHistory')}}">Our history</a></li>
+                    </ul>
+                </li>
+                <li>
+                        <a  href="{{url_for('ContactUs')}}"> Contact us</a>
+                </li>
+                <li class="class2">
+                    <a  href="{{url_for('appointments')}}"> Make your appointment</a>
+                </li>
+            </ul>
+        </nav>
+
+        <article>
+
+            {% block content %} {% endblock %}
+           
+        </article>
+        
+
+        <footer>
+           
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact Us: Telefon: (+4) ---- --- --- Telefon | Fax : (+4) ---- --- --- Mobile: | (+4) ---- --- --- Email: some email
+            </p>	
+            <ul>
+            <a href="https://www.facebook.com/nnbeautystudio/"><img src="/static/images/facebook.png" alt="facebook"></a><br>
+            </ul>
+
+        </footer>
+
+
+    </body>
+    </html> 

@@ -1,0 +1,9 @@
+
+///creates table
+python init_db.py
+
+
+///for running server
+SET FLASK_APP=app.py
+
+python "app.py"

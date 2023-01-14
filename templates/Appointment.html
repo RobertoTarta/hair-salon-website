@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NN Hair Salon</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/calendar_style.css">
+
+</head>
+
+    <body>
+        <header>
+            <a   class="middle" href="url_for('index')}}"><img src="/static/images/logo.png" alt="logo"></a>
+        </header>
+
+        <nav>
+            <ul > 
+                <li>
+                    <a  href="{{url_for('index')}}"> Home</a></li>
+                </li>
+
+                <li class="class1"><a> Services</a>
+                    <ul class="submenu1">
+                        <li><a href="{{url_for('HairCutting')}}"> Hair cutting</a></li>
+                        <li><a href="{{url_for('BeardShaving')}}"> Beard shaving</a></li>
+                        <li><a href="{{url_for('HairColoring')}}"> Hair coloring</a></li>
+                        <li><a href="{{url_for('Manicure')}}"> Manicure</a></li>
+                        <li><a href="{{url_for('Pedicure')}}"> Pedicure</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="{{url_for('AboutUs')}}"> About us</a>
+                    <ul class="submenu2">
+                        <li><a href="{{url_for('WhereToFindUs')}}">Where to find us</a></li>
+                        <li><a href="{{url_for('OurHistory')}}">Our history</a></li>
+                    </ul>
+                </li>
+                <li>
+                        <a  href="{{url_for('ContactUs')}}"> Contact us</a>
+                </li>
+                <li class="class2">
+                    <a  href="{{url_for('appointments')}}"> Make your appointment</a>
+                </li>
+            </ul>
+        </nav>
+
+        <article>
+            <ul id="wrapper">
+                <div id="showcase-wrapper">
+                    <div id="myCalendarWrapper"></div>
+                </div>
+            <button action="{{url_for('unselected')}}" class="fill">Post Appointment in selected date</button>    
+            </ul>
+
+        </article>
+
+
+        <footer>
+           
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact Us: Telefon: (+4) ---- --- --- Telefon | Fax : (+4) ---- --- --- Mobile: | (+4) ---- --- --- Email: some email
+            </p>	
+            <ul>
+            <a href="https://www.facebook.com/nnbeautystudio/"><img src="/static/images/facebook.png" alt="facebook"></a><br>
+            </ul>
+
+        </footer>
+
+
+    </body>
+    <script src="/static/script.js"></script>
+
+<script>
+    const nextYear = new Date().getFullYear() + 1;
+    const myCalender = new CalendarPicker('#myCalendarWrapper', {
+        // If max < min or min > max then the only available day will be today.
+        min: new Date(),
+        max: new Date(nextYear, 10), // NOTE: new Date(nextYear, 10) is "Nov 01 <nextYear>"
+        locale: 'en-US', // Can be any locale or language code supported by Intl.DateTimeFormat, defaults to 'en-US'
+        showShortWeekdays: false // Can be used to fit calendar onto smaller (mobile) screens, defaults to false
+    });
+
+
+
+    const fill = document.getElementById('fill');
+    
+
+    myCalender.onValueChange((currentValue) => {
+        fill =location.href="/create/" + currentValue.toDateString();
+
+        console.log(`The current value of the calendar is: ${currentValue}`);
+    });
+</script>
+
+    </html> 

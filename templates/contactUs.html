@@ -1,0 +1,72 @@
+
+{% extends 'Main.html' %}        
+{% block content %} 
+
+
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width:400px;
+            height: 300px;
+            margin-top: 10px;
+            background-color: black;
+            align-items: center;
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+            border-radius:10px;
+        }
+
+        .form_child{
+            margin-bottom: 10px;
+        }
+
+        #form_body {
+            resize: none;
+            height: 100px;
+            width:300px
+        }
+
+        #form_subject{
+            width: 300px;
+        }
+
+        #form_button{
+            height: 30px;
+            width:300px
+        }
+        
+        label{
+            margin-top: 10px;
+            color:white;
+        }
+
+        .email_title{
+            width: max-content;
+            padding: 2px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 10px;
+            border-radius:10px;
+            background-color: black;
+            margin-left:80px
+            
+            
+        }
+        h2{
+            color: white;
+        }
+    </style>
+<div class="email_title"><h2>Send us an email</h2> </div>   
+<form action="mailto:roberto.tarta10@e-uvt.ro" method="GET">
+    
+    <label for="form_subject">Title</label><br>
+    <input class="form_child" name="subject" type="text" id="form_subject" />
+    <label for="form_body">Body</label><br>
+    <textarea class="form_child" name="body" id="form_body"></textarea>
+    <input class="form_child" id="form_button" type="submit" value="Send" />
+</form>
+
+
+    {% endblock %}
